@@ -36,7 +36,7 @@ export default function Header() {
             5-Agent Pipeline
           </span>
           <a
-            href="https://github.com"
+            href="https://github.com/zulkar11/proposal-bot"
             target="_blank"
             rel="noopener noreferrer"
             className="flex h-8 w-8 items-center justify-center rounded-lg text-[var(--muted)] transition-colors hover:bg-[var(--surface)] hover:text-[var(--foreground)]"

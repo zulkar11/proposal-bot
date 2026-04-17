@@ -1,0 +1,40 @@
+E-Commerce Platform — Requirements Document
+
+Project Overview
+Build a full-featured e-commerce web application for a mid-size retail company. The platform should support both B2C and B2B sales channels with a modern, responsive design.
+
+Functional Requirements
+1. User registration and authentication (email, social login via Google/Facebook)
+2. Product catalog with categories, subcategories, search, and filters
+3. Product detail pages with images, variants (size/color), reviews, and ratings
+4. Shopping cart with persistent state across sessions
+5. Checkout flow with address management, shipping options, and order summary
+6. Payment integration (Stripe, PayPal)
+7. Order management — order history, tracking, cancellation, returns
+8. Admin dashboard — product CRUD, order management, customer management
+9. Inventory management with stock tracking and low-stock alerts
+10. Discount and coupon system with percentage/fixed amount and expiry dates
+11. Wishlist and save-for-later functionality
+12. Email notifications — order confirmation, shipping updates, promotional emails
+
+Non-Functional Requirements
+- Page load time under 2 seconds
+- Support 10,000 concurrent users
+- 99.9% uptime SLA
+- PCI DSS compliance for payment processing
+- Mobile-first responsive design
+- WCAG 2.1 AA accessibility compliance
+- SEO-friendly URLs and meta tags
+
+Constraints
+- Budget: $150,000
+- Timeline: 16 weeks
+- Must use cloud hosting (AWS or GCP)
+- Team: 2 frontend, 2 backend, 1 QA, 1 DevOps
+- Existing ERP integration required (REST API)
+
+Assumptions
+- Users will primarily access via mobile (70%) and desktop (30%)
+- Average product catalog size: 5,000 SKUs
+- Payment gateway accounts already set up
+- ERP API documentation available from client

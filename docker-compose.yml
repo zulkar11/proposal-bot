@@ -1,0 +1,33 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-glm-5.1}
+      - LLM_API_BASE=${LLM_API_BASE:-https://api.z.ai/api/paas/v4/}
+      - MAX_REVISION_ROUNDS=${MAX_REVISION_ROUNDS:-1}
+      - CORS_ORIGINS=http://localhost:3000
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      backend:
+        condition: service_healthy
